@@ -136,7 +136,7 @@ Messages created with `create_message(sender, receiver, type, payload)`:
 - **Index persistence**: FAISS currently in-memory; rebuild required on restart  
 - **Parser edge cases**: PDF parsing may include headers/footers/noise
 
-- Challenges faced
+ ** Challenges faced
 - The main challenges were managing heavy dependencies (PyTorch, Transformers) and GitHub file-size issues due to the venv folder. Integrating FAISS for retrieval and handling large documents with chunking required careful setup. Running Flan-T5 locally on CPU also caused slow responses, so caching and optimizations were added.
 
 ---
@@ -168,4 +168,5 @@ Messages created with `create_message(sender, receiver, type, payload)`:
 - Sentence Transformers  
 - FAISS / vector search community  
 - Streamlit team  
+
 
