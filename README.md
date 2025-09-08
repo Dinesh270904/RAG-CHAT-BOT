@@ -22,11 +22,8 @@ Agents communicate using a lightweight Model Context Protocol (MCP) style messag
 
 > Tested with Python 3.10+ — adjust if you use a different interpreter.
 
-1. Clone the repo
-```bash
-git clone https://github.com/yourusername/agentic-rag-chatbot.git
-cd agentic-rag-chatbot
-```
+
+`
 
 2. Create and activate a virtual environment
 ```bash
@@ -131,7 +128,7 @@ Messages created with `create_message(sender, receiver, type, payload)`:
 
 ---
 
-## ⚠️ Known limitations
+## ⚠️ Known limitations 
 
 - **Context limits**: Flan-T5 has small token window → heavy chunking needed  
 - **Retrieval dependency**: accuracy depends on chunking & embeddings  
@@ -139,23 +136,21 @@ Messages created with `create_message(sender, receiver, type, payload)`:
 - **Index persistence**: FAISS currently in-memory; rebuild required on restart  
 - **Parser edge cases**: PDF parsing may include headers/footers/noise
 
+- Challenges faced
+- The main challenges were managing heavy dependencies (PyTorch, Transformers) and GitHub file-size issues due to the venv folder. Integrating FAISS for retrieval and handling large documents with chunking required careful setup. Running Flan-T5 locally on CPU also caused slow responses, so caching and optimizations were added.
+
 ---
 
 ## ✅ Suggested next steps
 
 - Persist the vectorstore (ChromaDB or disk-backed FAISS) and store metadata  
-- Add DOCX / PPTX / CSV parsing and OCR for scanned PDFs  
 - Add a reranker (cross-encoder) for better top-k retrieval quality  
-- Add unit and integration tests + a CI workflow (GitHub Actions)  
+- Add unit and integration tests + a CI workflow (GitHub Actions)
+- Deployment with cloud and gpu will create amazing results also 
 
 ---
 
-## 🖼️ Screenshots / Demo
 
-Place screenshots in `docs/screenshots/` and reference them in README. Example:  
-
-- `docs/screenshots/upload.png` — upload + build vectorstore  
-- `docs/screenshots/chat.png` — sample Q&A  
 
 ---
 
@@ -167,16 +162,10 @@ Place screenshots in `docs/screenshots/` and reference them in README. Example:
 
 ---
 
-## 📄 License & Contact
-
-- License: MIT (or choose your preferred)  
-- Contact: your-email@example.com  
-
----
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Hugging Face & Transformers  
 - Sentence Transformers  
 - FAISS / vector search community  
 - Streamlit team  
+
